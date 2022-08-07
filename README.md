@@ -28,4 +28,4 @@ deno run -A show10.js 20 | say -v Otoya -o book10.aac
 
 ## リスト
 
-- [list_person_all_extended_utf8.csv](list_person_all_extended_utf8.csv) - 18,537冊分
+- [list_person_all_extended_utf8.csv](list_person_all_extended_utf8.csv) - 18,537冊分 ([公開中　作家リスト：全て](https://www.aozora.gr.jp/index_pages/person_all.html)より)
