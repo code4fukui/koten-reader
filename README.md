@@ -4,8 +4,8 @@ Macにて青空文庫を読み上げるツールです
 
 ## サンプル
 
-- [kumotoito.aac](sample/kumonoito.aac) - [蜘蛛の糸 by 芥川龍之介](https://www.aozora.gr.jp/cards/000879/files/92_14545.html)
-- [akuma.aac](sampleakuma.aac) - [悪魔 by 芥川龍之介](https://www.aozora.gr.jp/cards/000879/files/3804_27277.html)
+- [kumotoito.aac](https://code4fukui.github.io/koten-reader/sample/kumonoito.aac) - [蜘蛛の糸 by 芥川龍之介](https://www.aozora.gr.jp/cards/000879/files/92_14545.html)
+- [akuma.aac](https://code4fukui.github.io/koten-reader/sample/akuma.aac) - [悪魔 by 芥川龍之介](https://www.aozora.gr.jp/cards/000879/files/3804_27277.html)
 
 ## 使い方(Mac)
 
