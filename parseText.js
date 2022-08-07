@@ -60,7 +60,7 @@ export const parseText = (html) => {
     return s;
   };
 
-  const ss2 = ss.join("").replace(/\n/g, "。");
+  const ss2 = ss.join("").replace(/\n/g, "。\n");
   const text = kotencnv ? koten2gendai(ss2) : ss2;
 
   const res = [];
