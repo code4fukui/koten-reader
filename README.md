@@ -2,6 +2,10 @@
 
 Macにて[青空文庫](https://www.aozora.gr.jp/)の書籍を読み上げるツールです
 
+## Webアプリ
+
+- https://code4fukui.github.io/koten-reader/
+
 ## サンプル
 
 - [kumotoito.aac](https://code4fukui.github.io/koten-reader/sample/kumonoito.aac) - [蜘蛛の糸 by 芥川龍之介](https://www.aozora.gr.jp/cards/000879/files/92_14545.html)
