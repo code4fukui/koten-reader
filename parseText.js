@@ -1,15 +1,11 @@
-import { DOMParser } from "https://js.sabae.cc/DOMParser.js";
-import { SJIS } from "https://js.sabae.cc/SJIS.js";
-
-export const parseText = (html) => {
+export const parseText = (DOMParser, html) => {
   //const kanji = true;
   const kanji = false;
   const kotencnv = false;
 
-
   const dom = new DOMParser().parseFromString(html, "text/html");
   const title = dom.querySelector(".title")?.textContent;
-  const author = dom.querySelector(".author").textContent;
+  const author = dom.querySelector(".author")?.textContent;
   const translator = dom.querySelector(".translator")?.textContent;
   const main = dom.querySelector(".main_text");
   const ss = [];
@@ -65,7 +61,7 @@ export const parseText = (html) => {
 
   const res = [];
   res.push(title ? title + "。" : "");
-  res.push(author + "。");
+  res.push(author ? author + "。" : "");
   res.push(translator ? translator + "。" : "");
   res.push(text);
   return res.join("\n");
