@@ -1,40 +1,67 @@
-# 古典リーダー for Mac
+# koten-reader
 
-Macにて[青空文庫](https://www.aozora.gr.jp/)の書籍を読み上げるツールです
+> 日本語のREADMEはこちらです: [README.ja.md](README.ja.md)
 
-## Webアプリ
+A command-line tool for macOS to read aloud classic Japanese literature from Aozora Bunko.
 
-- https://code4fukui.github.io/koten-reader/
+## Demo
 
-## サンプル
+A simple, browser-based version is also available, which uses the Web Speech API for text-to-speech.
 
-- [kumotoito.aac](https://code4fukui.github.io/koten-reader/sample/kumonoito.aac) - [蜘蛛の糸 by 芥川龍之介](https://www.aozora.gr.jp/cards/000879/files/92_14545.html)
-- [akuma.aac](https://code4fukui.github.io/koten-reader/sample/akuma.aac) - [悪魔 by 芥川龍之介](https://www.aozora.gr.jp/cards/000879/files/3804_27277.html)
+https://code4fukui.github.io/koten-reader/
 
-## 使い方(Mac)
+## Features
 
-Macのsayコマンドを使って10冊読み上げる(音声は男性声Otoyaを使用)
-```
+-   Reads books aloud using the native macOS `say` command.
+-   Parses HTML from [Aozora Bunko](https://www.aozora.gr.jp/) to extract clean, readable text.
+-   Supports different system voices (e.g., male voice Otoya, female voice Kyoko) and reading speeds.
+-   Can generate audio files directly from the book text.
+-   Reads a random selection of books from the Aozora Bunko catalog or a specific book by URL.
+
+## Requirements
+
+-   [Deno](https://deno.land/)
+
+## Usage
+
+### Read 10 random books aloud (Otoya voice)
+
+The script fetches and parses 10 random books, then pipes the text to the `say` command.
+
+```bash
 deno run -A show10.js | say -v Otoya
 ```
-* [Deno](https://deno.land/)をインストール
-* Otoya は、システム環境設定、アクセシビリティ、読み上げコンテンツ、システムの声、カスタマイズ、日本語の中から選択してインストール
 
-Macのsayコマンドを使って1冊読み上げる（音声は女性声Kyokoを使用、少し早め -r 300）
-```
+### Read 1 random book aloud (Kyoko voice, faster)
+
+Specify the number of books as an argument. Here, we read one book at a rate of 300 words per minute.
+
+```bash
 deno run -A show10.js 1 | say -v Kyoko -r 300
 ```
 
-Macのsayコマンドを使って20冊分音声ファイルを生成する
-```
-deno run -A show10.js 20 | say -v Otoya -o book10.aac
+### Generate an audio file for 20 random books
+
+Use the `say` command's `-o` flag to save the output as an audio file.
+
+```bash
+deno run -A show10.js 20 | say -v Otoya -o book20.aac
 ```
 
-URLを指定して1冊読み上げる
-```
+### Read one specific book from a URL
+
+Use `test.js` to parse and read a book from a given Aozora Bunko URL.
+
+```bash
 deno run -A test.js "https://www.aozora.gr.jp/cards/000879/files/43014_17430.html" | say -v Otoya
 ```
 
-## リスト
+## Data
 
-- [list_person_all_extended_utf8.csv](list_person_all_extended_utf8.csv) - 18,537冊分 ([公開中　作家リスト：全て](https://www.aozora.gr.jp/index_pages/person_all.html)より)
+This project uses the official Aozora Bunko catalog list.
+
+-   [list_person_all_extended_utf8.csv](list_person_all_extended_utf8.csv) - A list of 18,537 works from [公開中　作家リスト：全て](https://www.aozora.gr.jp/index_pages/person_all.html).
+
+## License
+
+MIT License — see [LICENSE](LICENSE).
